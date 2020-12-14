@@ -15,11 +15,7 @@
 ## Task 06：综合练习
 
 > **延伸阅读：**
-
-> **SQL基础教程（第二版）**
-
-> **[SQL Tutorial](https://www.sqltutorial.org/sql-cheat-sheet/)**
-
-> **[Hackr.io sql-cheat-shee](https://hackr.io/blog/sql-cheat-sheet)**
-
-> **[WebsiteSetup.org mysql-cheat-sheet](https://websitesetup.org/sql-cheat-sheet/)**
+- SQL基础教程（第二版）
+- [SQL Tutorial](https://www.sqltutorial.org/sql-cheat-sheet/)
+- [Hackr.io sql-cheat-shee](https://hackr.io/blog/sql-cheat-sheet)
+- [WebsiteSetup.org mysql-cheat-sheet](https://websitesetup.org/sql-cheat-sheet/)

@@ -1,7 +1,5 @@
 # Task 01： 初始数据库
 
-![](./img/SQL-Cheat-Sheet-Summary-Full.png)
-
 > `初始数据库`：学习任务包括为什么需要数据库、什么是数据库、数据库的结构、SQL概要、表的创建、表的删除和更新以及学习理解！
 
 **学习重点：**
@@ -14,11 +12,13 @@
 
 ## 1.2 什么是数据库？
 
-- 数据库的分类
-- 什么是DBMS
-- DBMS的分类
+- 什么是数据库
 
-数据库是将大量数据保存起来，通过计算机加工而成的可以进行高效访问的数据集合。用来管理数据库的计算机系统称为数据库管理系统。关系数据库通过关系数据库管理系统（RDBMS）进行管理。
+SQL是一种语言。它概述了允许你编写管理关系数据库的查询的语法。仅此而已。同时，MySQL是一个运行在服务器上的数据库系统，它实现了SQL语言，让你可以用它的语法来编写管理MySQL数据库的查询。它实现了SQL语言，允许你使用它的语法来编写管理MySQL数据库的查询。
+
+- 什么是DBMS
+
+数据库是将大量数据保存起来，通过计算机加工而成的可以进行高效访问的数据集合。用来管理数据库的计算机系统称为数据库管理系统（DBMS）。关系数据库通过关系数据库管理系统（RDBMS）进行管理。
 
 - DBMS的种类
 
@@ -29,7 +29,7 @@
     ![](./img/SQLvsMySQL.png)
 
     - Oracle Database：甲骨文公司的RDBMS
-    - SQL Server ：微软公司的RDBMS
+    - Microsoft SQL Server ：微软公司的RDBMS
     - DB2：IBM 公司的RDBMS
     - PostgreSQL：开源的RDBMS
     - MySQL ：开源的RDBMS
@@ -71,12 +71,16 @@
   > 记录：表的行（水平方向）称为记录，它相当于一条数据。
   >
   > 单元格：行和列交汇的方格称为单元格。 一个单元格中只能输入一个数据。
-  >
-  > :exclamation: 注意：关系数据库必须以行为单位进行数据读写！
+
+:exclamation: 注意：关系数据库必须以行为单位进行数据读写！
 
 ## 1.4 SQL概要
 
 ![](./img/what_is_sql.png)
+
+SQL即结构化查询语言。它是当今网络上在关系数据库中存储、操作和检索数据的首选语言。你所访问的大多数甚至所有的网站都会以某种方式使用它，包括这个网站。
+
+下图是一个基本的关系数据库示例。这个例子存储了电子商务信息，特别是销售的`产品`，购买这些产品的`用户`，以及这些`订单的记录`，这些记录将这2个`实体`联系起来。
 
 - 标准SQL
 
@@ -139,7 +143,7 @@
 
     CREATE TABLE Product
 
-    > :exclamation: 注意：不能使用全角空格作为单词的分隔符！
+:exclamation: 注意：不能使用全角空格作为单词的分隔符！
 
   
 
@@ -332,17 +336,52 @@
    表1-A 表Addressbook（地址簿）中的列
 
 
-2. 假设在创建练习1.1 中的Addressbook 表时忘记添加如下一列postal_code（邮政编码）了，请把此列添加到Addressbook 表中。
+   ```sql
+   CREATE TABLE Addressbook
+   (
+       regist_no INTEGER NOT NULL,
+       name VARCHAR(128) NOT NULL,
+       address VARCHAR(256) NOT NULL,
+       tel_no CHAR(10),
+       mail_address CHAR(20),
+       PRIMARY KEY (regist_no)
+   );
+   ```
 
-   列名 ：postal_code
+2. 假设在创建练习1中的Addressbook表时忘记添加如下一列`postal_code`（邮政编码）了，请把此列添加到Addressbook 表中。
+
+   列名 ：`postal_code`
    数据类型 ：定长字符串类型（长度为8）
    约束 ：不能为NULL
 
+   ```sql
+   -- MySQL
+   ALTER TABLE Addressbook ADD COLUMN postal_code CHAR(8) NOT NULL;
+   
+   -- SQL Server
+   ALTER TABLE Addressbook ADD postal_code CHAR(8) NOT NULL;
+   ```
 
-3. 编写SQL 语句来删除Addressbook 表。
+3. 编写SQL语句来删除Addressbook表。
+
+   ```sql
+   DROP TABLE Addressbook;
+   ```
+
+4. 编写SQL语句来恢复删除掉的Addressbook表。
+
+   使用`DROP`语句删除的表是无法恢复的，只能重新插入。也可以使用`CREATE TABLE`语句新建一个表！！！
+
+> **延伸阅读：**
+
+- [SQL Tutorial](https://www.sqltutorial.org/sql-cheat-sheet/)
+- [Hackr.io sql-cheat-shee](https://hackr.io/blog/sql-cheat-sheet)
+- [WebsiteSetup.org mysql-cheat-sheet](https://websitesetup.org/sql-cheat-sheet/)
+
+![](./img/SQL-Cheat-Sheet-Summary-Full.png)
 
 
-4. 编写SQL 语句来恢复删除掉的Addressbook 表。
 
+   
 
    

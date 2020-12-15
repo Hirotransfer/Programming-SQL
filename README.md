@@ -49,3 +49,5 @@
 > **参考书籍：**
 
 - [SQL基础教程（第二版）](https://github.com/Hirotransfer/Programming-SQL/blob/main/doc/SQL_Basic.pdf)
+
+  ![](./img/SQL_Basic.png)
